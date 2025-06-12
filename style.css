@@ -938,15 +938,12 @@ body.no-scroll {
   }
 }
 #orientationOverlay {
-  display: none; /* Hidden by default */
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #0d47a1;
-  color: #fff;
-  z-index: 9999;
+  inset: 0;
+  background-color: #232323d1;
+  color: white;
+  z-index: 999999 !important; /* force to top */
+  display: none;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -958,7 +955,8 @@ body.no-scroll {
 }
 
 .rotate-box p {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  line-height: 1.6;
 }
 
