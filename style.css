@@ -1,0 +1,925 @@
+/* === Reset and Base Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: #f5faff;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll issues */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* Crucial for enabling sufficient scroll. Adjust as needed if more sections are added. */
+    min-height: 250vh;
+}
+
+/* === Shared Section Styling === */
+.section {
+    display: flex;
+    flex-direction: row; /* Arranges content side-by-side */
+    width: 100%;
+    position: relative; /* Essential for z-index to work */
+    z-index: 1; /* Default stacking order */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth animations */
+}
+
+/* === Left Fixed Portrait (Sticky Image) === */
+.left-fixed {
+    position: sticky;
+    top: 0; /* Sticks to the top of the viewport */
+    height: 100vh; /* Takes full viewport height */
+    width: 50%; /* Occupies half the screen width */
+    background-color: #d6eaf8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    z-index: 10; /* Stays above other content */
+    transition: opacity 1s ease;
+    flex-shrink: 0; /* Prevents image from shrinking in flex container */
+}
+
+.half-photo {
+    width: 85%;
+    max-height: 110% ;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;
+    box-shadow:  rgba(0, 0, 0, 0.15);
+}
+
+/* === Section 1: Intro + Enthusiasm === */
+.section-intro {
+    z-index: 3; /* Higher than education section, so it appears on top initially */
+    /* Height is determined by its content */
+}
+
+.right-scrollable {
+    width: 50%; /* Occupies remaining half of the screen */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5faff;
+    z-index: 3;
+}
+
+.intro {
+    min-height: 100vh; /* Ensures initial view fills the screen vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 50px;
+}
+
+.hello-text {
+    font-size: 4rem;
+    color: #0d47a1;
+    font-weight: 700;
+    opacity: 0; /* Starts hidden */
+    transform: translateY(20px); /* Starts slightly below its final position */
+    animation: fadeInUp 1s ease forwards 0.2s; /* Animates in on load */
+    transition: opacity 0.5s; /* For scroll-based fade-out */
+}
+
+.name-text {
+    font-size: 2.4rem;
+    color: #333;
+    font-weight: 500;
+    opacity: 0; /* Starts hidden */
+    transform: translateY(20px); /* Starts slightly below its final position */
+    animation: fadeInUp 1s ease forwards 0.8s; /* Animates in after hello text */
+    position: sticky; /* Makes name text sticky as you scroll */
+    top: 0; /* Sticks to the top of its parent */
+    background: #f5faff; /* Ensures background matches */
+    padding: 20px 0;
+    z-index: 10; /* Stays on top when sticky */
+}
+
+.enthusiasm {
+    padding: 75px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70vh; /* Adds more scrollable content to the first section */
+}
+
+.enthusiasm-line {
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 80px;
+}
+
+/* --- */
+
+/* --- */
+
+/* === Section 3: Skills === */
+/* ... (rest of .section-skills styles) ... */
+.section-skills {
+    background-color: #ffffff; /* A slightly different light blue background for distinction */
+    min-height: 100vh; /* Ensures it takes up full viewport height when visible */
+    display: flex;
+    flex-direction: row; /* Side-by-side layout */
+    width: auto;
+    padding-bottom: 20px;
+    z-index: 0; /* Default stacking context */
+    opacity: 1; /* Starts hidden */
+    transform: translateY(50px); /* Starts slightly pushed down */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth animation */
+}
+.skills-photo-container {
+    width: 68%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #e0f2f7; /* A slightly darker blue for the photo background */
+    border-radius: 12px; /* Consistent rounded corners with other photo containers */
+}
+/* In your style.css file */
+
+/* --- General .skills-content h1 rule (ensure it's not centering text) --- */
+.skills-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px; /* Adjust this value as needed */
+    color: #0d47a1;
+    text-align:center; /* Ensure it's left-aligned if it was set to center */
+}
+
+
+/* --- Specific styles for the FIRST h3 and its intro paragraph --- */
+
+/* This targets the h3 that directly follows an h1 inside .skills-content */
+.skills-content h3 {
+    font-size: 1.2rem; /* Keep this reduced size */
+    margin-top: 15px; /* Space above */
+    margin-bottom: 8px; /* Space below */
+    color: #333;
+    text-align: center; /* ONLY THIS H3 IS CENTERED */
+    width: 100%; /* Ensure it takes full width for centering */
+}
+.skillssection-intro-text {
+    font-size: 1.2rem; /* Keep this reduced size */
+    color: #444;
+    line-height: 1.5; /* Keep reduced line-height */
+    margin-bottom: 0px; /* Keep reduced margin to the next block */
+    padding: 0;
+    text-align: auto; /* THIS PARAGRAPH IS CENTERED */
+    max-width:auto; /* Max width for readability, adjust as needed */
+    margin-left: auto; /* Centers the block if max-width is applied */
+    margin-right: auto; /* Centers the block if max-width is applied */
+}
+/* This targets the introductory text paragraph */
+.section-intro-text {
+    font-size: 0.6rem; /* Keep this reduced size */
+    color: #444;
+    line-height: 0.5; /* Keep reduced line-height */
+    margin-bottom: 0px; /* Keep reduced margin to the next block */
+    padding: 0;
+    text-align: auto; /* THIS PARAGRAPH IS CENTERED */
+    max-width:1000px; /* Max width for readability, adjust as needed */
+    margin-left: auto; /* Centers the block if max-width is applied */
+    margin-right: auto; /* Centers the block if max-width is applied */
+}
+
+
+/* --- Styles for other h3 elements (skill categories) --- */
+/* This rule ensures that other h3 elements (like 'Analytical Toolkit & Technical Mastery')
+   remain left-aligned and have their own distinct spacing.
+   Adjust margins as desired for spacing between the blocks. */
+.skill-category-block h3 {
+    font-size: 1.3rem; /* Keep this consistent with the intro h3 if desired, or make it slightly different */
+    margin-top: 30px; /* Space above this h3 (adjust as needed for spacing between blocks) */
+    margin-bottom: 15px; /* Space below this h3 */
+    color: #0d47a1; /* You might want a stronger color for these sub-headings */
+    text-align: left; /* Explicitly ensure these are left-aligned */
+}
+
+/* Ensure the skill tags container is also left-aligned */
+.skill-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    justify-content: flex-start; /* Ensure tags are left-aligned */
+    /* Add any other styling you need for the container */
+}
+
+/* Ensure individual skill tags are styled */
+.skill-tag {
+    background-color: #e0f2f7;
+    color: #0d47a1;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Prevents tags from breaking words */
+}
+.skills-photo {
+    width: 80%;
+    /* *** MODIFIED THIS LINE *** */
+    /* Reduced max-height to make it visually smaller, similar to other photos */
+    max-height: 100%; /* Try this value. You can adjust between 70% and 85% */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 rgba(0, 0, 0, 0.15);
+}
+
+/* ... (rest of your CSS) ... */
+
+---
+
+.section-education {
+    background-color: #fff;
+    opacity: 0; /* Starts invisible */
+    transform: translateY(50px); /* Starts slightly pushed down */
+    min-height: 100vh; /* Ensures it takes up full viewport height when visible */
+    display: flex;
+    width: 100%;
+    z-index: 2; /* Lower z-index than intro section, so intro covers it initially */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth fade-in and slide */
+}
+
+.section-education.fade-in {
+    opacity: 1; /* Becomes fully visible */
+    transform: translateY(0); /* Slides up to its natural position */
+}
+
+.education-text {
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #222;
+}
+
+.education-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #0d47a1;
+}
+
+.education-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.education-photo-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d6eaf8;
+    padding: 20px;
+}
+
+.education-photo {
+    width: 75%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;
+    box-shadow: 0  rgba(0, 0, 0, 0.15);
+}
+/* --- */
+
+/* === Section 4: Professional Experience === */
+.section-experience {
+    background-color: #f5faff; /* Light background for the section */
+ padding-top: 0;      /* ← Set this to 0 */
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 80px;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-start; /* Center content horizontally */
+    width: 100%;
+    z-index: 1; /* Default stacking order */
+    opacity: 1;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+    
+}
+
+.section-experience.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-heading {
+    font-size: 3rem; /* Larger, prominent heading */
+    color: #0d47a1; /* Your primary blue */
+    margin-bottom: 10px; /* Space below the main heading */
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    /* --- NEW STICKY PROPERTIES --- */
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick to the top of the viewport */
+    background-color: #f5faff; /* Match section background to prevent content show-through */
+    padding-top: 0px; /* Add some padding at the top */
+    padding-bottom: 0px; /* Add some padding at the bottom */
+    margin-top: 0 ;
+    z-index: 10 ; /* Ensure it stays above experience blocks when sticky */
+    box-shadow: 0  rgba(0,0,0,0.05); /* Subtle shadow when sticky */
+}
+
+.experience-block {
+    background-color: #ffffff; /* White background for each experience card */
+    border-radius: 30px; /* Rounded corners for the card */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft, prominent shadow */
+    padding: 20px; /* Internal padding */
+    
+    max-width: 1400px; /* Max width to prevent it from getting too wide on large screens */
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.experience-content {
+    flex: 0 0 70%; /* Allows text content to take up available space */
+    display: flex;
+    flex-direction: column;
+    /* Optional: If text is long, you might need overflow-y: auto; max-height: ...; here */
+}
+
+/* NEW: Styles for the image wrapper within each experience block */
+.experience-image-container {
+    flex: 0 0 30% ;/* Prevent image from shrinking too much */
+/* Fixed width for the image container */
+    height: auto; /* Fixed height for consistency */
+    border-radius: 10px; /* Slightly rounded corners for the image container */
+    overflow: hidden;/* Hide any overflow if image is larger */
+    background-color: #e0f2f7; /* Background if image doesn't fill or is loading */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* NEW: Styles for the image itself */
+.experience-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop image to fit the container */
+    display: block; /* Remove extra space below image */
+}
+
+.experience-block:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.experience-header {
+    margin-bottom: 15px; /* Space below header info */
+    border-bottom: 1px solid #e0f2f7; /* Subtle separator line */
+    padding-bottom: 8px;
+}
+
+.experience-header h3 {
+    font-size: 1.5rem; /* Job title size */
+    color: #1a237e; /* Darker blue for titles */
+    margin-bottom: 3px;
+}
+
+.company-info {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 400;
+}
+
+.experience-details ul {
+    margin-bottom: 15px;
+}
+
+.experience-details ul li {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    color: #333;
+    position: relative;
+    padding-left: 20px; /* Space for custom bullet */
+}
+
+/* Custom bullet point */
+
+
+.technologies-used {
+    font-size: 0.95rem;
+    color: #777;
+    font-style: italic;
+    margin-top: 15px;
+    border-top: 1px dashed #eee; /* Subtle dashed line above tech */
+    padding-top: 10px;
+}
+
+.technologies-used strong {
+    color: #333;
+}
+
+/* --- NEW SECTION: My Dashboards Showcase --- */
+
+/* --- NEW SECTION: My Dashboards Showcase --- */
+
+/* === Section 5: My Dashboards Showcase - No change, keep as is === */
+.section-dashboards {
+    background-color: #ffffff;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1;
+    opacity: 1;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* === Professional Experience Heading - MODIFIED for fade out === */
+/* Locate this rule, it's NOT in the dashboard section */
+.section-heading {
+    font-size: 3rem;
+    color: #0d47a1;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 0;
+    background-color: #f5faff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    /* NEW: Add transition for opacity */
+    transition: opacity 0.5s ease; /* Smooth fade effect */
+}
+
+
+/* NEW: Class for fading out the sticky heading */
+.section-heading.fade-out-sticky {
+    opacity: 0;
+    pointer-events: none; /* Make it unclickable when faded */
+}
+
+
+/* NEW: Styles for the Dashboard Gallery Container - No change, keep as is */
+.dashboard-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive 2x2 grid */
+    gap: 30px;
+    width: 100%;
+    justify-items: center;
+    align-items: start;
+    max-width: 1000px;
+    margin-top: 0px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* === NEW: Styles for each individual Dashboard Item (2x2 Layout) === */
+.dashboard-item {
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 100%; /* Let grid manage width */
+}
+
+
+
+.dashboard-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* NEW: Styles for the Dashboard Image */
+.dashboard-image {
+    width: 100%;
+    max-width:fit-content;
+    max-height: fit-content;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.dashboard-image-wrapper {
+    width: 100%;
+    height: 250px;
+    aspect-ratio: 16 / 9;  /* Keeps 4:3 ratio */
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+}
+
+.dashboard-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.dashboard-image-clickable {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+/* NEW: Styles for the Dashboard Caption - No change, keep as is */
+.dashboard-caption {
+    font-size: 0.95rem;
+    color: #555;
+    text-align: center;
+    padding: 0 10px;
+}
+
+
+
+/* --- Update .container min-height --- */
+/* Find your .container rule and increase its min-height further */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 750vh; /* Increased from 700vh, you may need to fine-tune */
+}
+@media (max-width: 600px) {
+    .dashboard-gallery {
+        grid-template-columns: 1fr; /* Stack on narrow screens */
+    }
+
+    .dashboard-image {
+        height: 180px;
+    }
+}
+
+/* --- NEW SECTION: Certifications & Trainings --- */
+
+/* === Section 6: Certifications & Trainings === */
+.section-certifications {
+    background-color: #f5faff; /* Or your preferred background */
+    padding-top: 0; /* Heading handles its own space */
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column; /* Stack heading, intro text, and gallery */
+    align-items: center; /* Center content horizontally */
+    position: relative;
+    width: 100%;
+    z-index: 1; /* Default z-index, will be managed by JS during transitions */
+    opacity: 1; /* Initial state, controlled by JS */
+    transform: translateY(50px); /* Initial state, controlled by JS */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Re-use existing .section-heading for consistency */
+/* .section-heading rules are defined earlier and will apply here */
+
+/* Style for the introductory text (from previous prompt) */
+.section-intro-text {
+    font-size: 1.15rem;
+    color: #444;
+    text-align: center;
+    max-width: 800px; /* Constrain width for readability */
+    margin-bottom: 50px; /* Space between intro and certs */
+    line-height: 1.8;
+    padding: 0 20px; /* Add some padding for smaller screens */
+    box-sizing: border-box;
+}
+.cert-intro-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+}
+
+.cert-text-block {
+  flex: 1;
+  min-width: 300px;
+}
+
+.cert-text-block .section-heading {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.cert-photo-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+.cert-photo {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for the certification items (similar to dashboard-gallery) */
+.cert-gallery {
+    display: flex;
+    flex-direction: row; /* Arrange items side-by-side */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center the certification cards horizontally */
+    align-items: stretch; /* Make all items in a row the same height */
+    width: 100%;
+    max-width: 1200px; /* Increased max-width to allow for 3 columns more easily */
+    gap: 25px; /* Space between individual certification items (adjusted for 3 columns) */
+    padding: 0 10px; /* Small padding inside the gallery itself */
+    box-sizing: border-box;
+}
+
+/* Styles for EACH individual Certification Item (Base styles) */
+.cert-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    padding: 20px; /* Slightly reduced padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content within each card */
+    text-align: center;
+    justify-content: space-between; /* Space out content vertically */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-decoration: none; /* Remove underline for links */
+    color: inherit; /* Inherit text color for links */
+    min-height: 200px; /* Ensure a minimum height for all cert items for consistency */
+}
+
+.cert-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Specific styles for IMAGE Certifications (3x3 Grid) */
+.cert-item.image-cert {
+    /* For 3 columns: Each takes roughly 33.33% minus a portion of the gap.
+       (25px gap * 2 = 50px total gap for 3 items. 50px / 3 items = approx 16.67px per item to subtract) */
+    flex-basis: calc(33.333% - 16.67px);
+    max-width: 350px; /* Max width for individual image cert card */
+    padding: 15px; /* Adjust padding for images */
+}
+
+.cert-image {
+    width: 100%; /* Image fills its container */
+    max-width: 150px; /* Limit the max width of the *image itself* within the card */
+    height: auto;
+    object-fit: contain; /* Ensure the full image is visible, no cropping */
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 8px; /* Slightly rounded corners for images */
+    cursor: pointer;
+}
+
+.cert-caption {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: auto; /* Pushes caption to the bottom if space-between is used */
+}
+
+/* Specific styles for PDF Certifications */
+.cert-item.pdf-cert {
+    flex-basis: calc(33.333% - 16.67px); /* Same sizing as image certs for grid consistency */
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    font-weight: 500;
+}
+
+.pdf-icon {
+    width: 80px; /* Size of the PDF icon */
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Specific styles for Credly Link */
+.cert-item.credly-link {
+    flex-basis: calc(33.333% - 16.67px); /* Same sizing as others */
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.credly-icon {
+    width: 80px; /* Size of the Credly icon */
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+/* --- Re-use existing Lightbox/Modal Styles (from Dashboard section) --- */
+/* Ensure these styles are in your CSS. No changes needed to them. */
+/*
+.lightbox { ... }
+.lightbox.active { ... }
+.lightbox-content { ... }
+.lightbox-caption { ... }
+.close-button { ... }
+*/
+
+/* === Update .container min-height === */
+/* Find your .container rule and increase its min-height significantly */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 900vh; /* Increased significantly - you will need to fine-tune this */
+}
+
+/* === Responsive Adjustments (Optional but Recommended) === */
+@media (max-width: 768px) {
+    .cert-item.image-cert,
+    .cert-item.pdf-cert,
+    .cert-item.credly-link {
+        flex-basis: calc(50% - 15px); /* 2 items per row on smaller screens */
+        max-width: 400px; /* Adjust max width for 2 columns */
+    }
+}
+
+@media (max-width: 480px) {
+    .cert-item.image-cert,
+    .cert-item.pdf-cert,
+    .cert-item.credly-link {
+        flex-basis: 90%; /* 1 item per row on very small screens */
+        max-width: 350px;
+    }
+}
+/* --- NEW: Lightbox/Modal Styles --- */
+/* --- NEW: Lightbox/Modal Styles - CORRECTED & CONSOLIDATED --- */
+/* This is the primary and ONLY definition for your lightbox */
+/* Lightbox base */
+/* Universal Lightbox container */
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-caption {
+  color: #ccc;
+  font-size: 1rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.lightbox-inner {
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .lightbox-content {
+    max-width: 100%;
+    max-height: 70vh;
+  }
+}
+
+/* Keyframe for simple zoom animation */
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* NEW: Class to prevent body scrolling when lightbox is active */
+body.no-scroll {
+    overflow: hidden;
+}
+/* === Animation & Transition Classes === */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.section-contact {
+  background-color: #f5faff;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-heading {
+  font-size: 2.5rem;
+  color: #0d47a1;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.contact-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  width: 100%;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  color: #333;
+  justify-content: flex-start;
+}
+
+.contact-item a {
+  color: #0d47a1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.fade-out {
+    opacity: 0; /* Fades out */
+    transform: translateY(-50px); /* Slides up slightly as it fades */
+    pointer-events: none; /* Prevents interaction with the faded-out section */
+}
+
+.hide-hello {
+    opacity: 0 !important; /* Forces opacity to 0 for the "Hello" text */
+    transition: opacity 0.5s ease;
+}
