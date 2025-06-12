@@ -298,9 +298,12 @@
       <span>Location: Hyderabad, India</span>
     </div>
   </div>
-  <div id="orientationNotice">
-  For best viewing, rotate your device to landscape mode.
+ <div id="orientationOverlay">
+  <div class="rotate-box">
+    <p>Please rotate your device for a better viewing experience.</p>
+  </div>
 </div>
+
 
 
 </section>
@@ -451,17 +454,23 @@ lightboxImage.addEventListener('click', (e) => {
   e.stopPropagation(); // Prevent closing when image is clicked
 });
 
- function checkOrientation() {
-  const notice = document.getElementById('orientationNotice');
-  if (window.innerWidth < 768 && window.innerHeight > window.innerWidth) {
-    notice.style.display = 'block';
-  } else {
-    notice.style.display = 'none';
-  }
-}
+function checkOrientation() {
+    const overlay = document.getElementById("orientationOverlay");
+    const isMobile = window.innerWidth <= 768;
+    const isPortrait = window.innerHeight > window.innerWidth;
 
-window.addEventListener('resize', checkOrientation);
-window.addEventListener('load', checkOrientation);
+    if (isMobile && isPortrait) {
+      overlay.classList.add("active");
+      document.body.style.overflow = "hidden"; // Prevent scroll
+    } else {
+      overlay.classList.remove("active");
+      document.body.style.overflow = ""; // Restore scroll
+    }
+  }
+
+  window.addEventListener("load", checkOrientation);
+  window.addEventListener("resize", checkOrientation);
+  window.addEventListener("orientationchange", checkOrientation);
 
 
 
