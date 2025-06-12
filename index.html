@@ -454,23 +454,26 @@ lightboxImage.addEventListener('click', (e) => {
   e.stopPropagation(); // Prevent closing when image is clicked
 });
 
-function checkOrientation() {
+
+  function checkOrientation() {
     const overlay = document.getElementById("orientationOverlay");
     const isMobile = window.innerWidth <= 768;
     const isPortrait = window.innerHeight > window.innerWidth;
 
     if (isMobile && isPortrait) {
       overlay.classList.add("active");
-      document.body.style.overflow = "hidden"; // Prevent scroll
+      document.body.style.overflow = "hidden";
     } else {
       overlay.classList.remove("active");
-      document.body.style.overflow = ""; // Restore scroll
+      document.body.style.overflow = "";
     }
   }
 
   window.addEventListener("load", checkOrientation);
   window.addEventListener("resize", checkOrientation);
   window.addEventListener("orientationchange", checkOrientation);
+
+
 
 
 
