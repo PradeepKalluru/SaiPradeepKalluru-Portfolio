@@ -923,3 +923,104 @@ body.no-scroll {
     opacity: 0 !important; /* Forces opacity to 0 for the "Hello" text */
     transition: opacity 0.5s ease;
 }
+
+/* === Mobile Responsiveness for ~6 inch screens (max-width: 480px) === */
+@media (max-width: 480px) {
+  .section {
+    flex-direction: column; /* Stack sections vertically */
+  }
+
+  .left-fixed,
+  .right-scrollable,
+  .education-text,
+  .education-photo-container,
+  .skills-photo-container,
+  .skills-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .half-photo,
+  .education-photo,
+  .skills-photo {
+    width: 90%;
+    height: auto;
+    max-height: 300px;
+  }
+
+  .intro {
+    padding: 50px 20px;
+  }
+
+  .hello-text {
+    font-size: 2.5rem;
+  }
+
+  .name-text {
+    font-size: 1.5rem;
+  }
+
+  .enthusiasm-line {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+    padding: 20px 10px;
+  }
+
+  .experience-block {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .experience-image-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .dashboard-gallery {
+    grid-template-columns: 1fr; /* One per row */
+  }
+
+  .dashboard-image-wrapper {
+    height: 200px;
+  }
+
+  .cert-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cert-item {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .cert-image {
+    max-width: 100%;
+  }
+
+  .contact-heading {
+    font-size: 1.8rem;
+  }
+
+  .contact-item {
+    font-size: 1rem;
+  }
+
+  .contact-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .lightbox-content {
+    max-height: 60vh;
+    max-width: 95%;
+  }
+
+  .lightbox-caption {
+    font-size: 0.9rem;
+  }
+}
