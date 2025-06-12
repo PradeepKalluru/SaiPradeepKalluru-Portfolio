@@ -946,7 +946,7 @@ body.no-scroll {
     display: flex;
   }
 
-  body {
+  body.no-scroll {
     overflow: hidden;
   }
 }
