@@ -924,3 +924,29 @@ body.no-scroll {
     transition: opacity 0.5s ease;
 }
 
+#rotateNotice {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000000e0;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+@media screen and (orientation: portrait) and (max-width: 768px) {
+  #rotateNotice {
+    display: flex;
+  }
+
+  body {
+    overflow: hidden;
+  }
+}
