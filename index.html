@@ -450,6 +450,27 @@ lightboxImage.addEventListener('click', (e) => {
   e.stopPropagation(); // Prevent closing when image is clicked
 });
 
+  function checkOrientation() {
+    const notice = document.getElementById('rotateNotice');
+    if (window.innerHeight > window.innerWidth) {
+      // Portrait mode
+      notice.style.display = 'flex';
+      document.body.classList.add('no-scroll');
+    } else {
+      // Landscape mode
+      notice.style.display = 'none';
+      document.body.classList.remove('no-scroll');
+    }
+  }
+
+  // Run on load
+  window.addEventListener('load', checkOrientation);
+
+  // Run on resize/orientation change
+  window.addEventListener('resize', checkOrientation);
+  window.addEventListener('orientationchange', checkOrientation);
+
+
 
 
 
