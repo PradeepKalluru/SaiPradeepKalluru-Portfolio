@@ -959,4 +959,14 @@ body.no-scroll {
   font-weight: 600;
   line-height: 1.6;
 }
+.section {
+  opacity: 0;
+  transform: translateY(50px);  /* Start slightly pushed down */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
