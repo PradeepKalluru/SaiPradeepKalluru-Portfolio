@@ -205,6 +205,73 @@
     </div>
 
 </section>
+    <section id="projects" class="section-projects">
+  <div class="projects-container">
+
+    <!-- Left Side -->
+    <div class="projects-left">
+      <h2 class="section-title">Projects</h2>
+
+      <!-- Project Folder Thumbnail -->
+      <div class="project-thumbnail">
+        <img src="assets\sales_analysis\sales_thumbnail.png" />
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="projects-right">
+      <h3>Sales Data Analysis using Python</h3>
+      <h4>Objectives:</h4>
+      <ul>
+        <li>Understand sales patterns across regions and products</li>
+        <li>Analyze customer behavior and payment preferences</li>
+        <li>Identify seasonal trends and top-performing products</li>
+      </ul>
+
+      <h4>Key Outcomes & Insights:</h4>
+      <ul>
+        <li>Top 3 products contributed to 45% of total revenue</li>
+        <li>Peak sales occur during holiday season; certain regions lag behind</li>
+        <li>Majority of customers prefer online payments → targeted campaigns</li>
+      </ul>
+
+      <div class="project-links">
+        <a href="https://nbviewer.org/github/PradeepKalluru/SaiPradeepKalluru-Portfolio/blob/main/assets/sales_analysis/sales_analysis.ipynb" target="_blank" class="btn">View Jupyter Notebook</a>
+        <a href="assets\sales_analysis\case_study.pdf" target="_blank" class="btn">Read Case Study →</a>
+      </div>
+    </div>
+  </div>
+ <div class="project-visuals">
+  <img src="assets/sales_analysis/thumbnail.png" 
+       alt="Check the visualizations of the analysis" 
+       class="visual-thumbnail gallery-trigger">
+  <p class="thumb-caption">Check the visualizations of the analysis</p>
+</div>
+
+<!-- Gallery Popup -->
+<div id="galleryModal" class="gallery-modal">
+  <span class="close">&times;</span>
+  <div class="gallery-content" id="galleryImages"></div>
+</div>
+
+
+<!-- === Lightbox Gallery for Analysis Images === -->
+<div class="lightbox" id="galleryLightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightboxImg" />
+  <div class="caption" id="lightboxCaption"></div>
+  <a class="prev">&#10094;</a>
+  <a class="next">&#10095;</a>
+</div>
+
+
+<!-- Lightbox for visualizations -->
+<div class="lightbox">
+  <span class="close-button">&times;</span>
+  <img class="lightbox-content" alt="">
+  <div class="lightbox-caption"></div>
+</div>
+</section>
 <section id="certificationsSection" class="section section-certifications">
   <div class="cert-intro-wrapper">
     <div class="cert-text-block">
@@ -226,6 +293,12 @@
             <img src="assets\images\PMI Certfication_CAPM.jpg" data-large="assets\images\PMI Certfication_CAPM.jpg" alt="CAPM from PMI" class="cert-image clickable">
             <p class="cert-caption">CAPM from PMI</p>
         </div>
+      <a href="assets\images\Coursera GEN AI Data Analyst IBM.pdf" target="_blank" class="cert-item pdf-cert">
+            <img src="assets\images\Coursera Gen Ai Data Analyst IBM.png" alt="PDF Icon" class="pdf-icon"> <p class="cert-caption">Generative Ai for Data Analyst by IBM</p>
+        </a>
+        <a href="assets\images\Coursera Power Bi.pdf" target="_blank" class="cert-item pdf-cert">
+            <img src="assets\images\Coursera Power Bi.png" alt="PDF Icon" class="pdf-icon"> <p class="cert-caption">Power Bi Data Analyst by Microsoft</p>
+        </a>
         <div class="cert-item image-cert">
             <img src="assets\images\Udemy Tableauu.jpg"data-large="assets\images\Udemy Tableauu.jpg" alt="Tableau" class="cert-image clickable">
             <p class="cert-caption">Tableau</p>
@@ -500,9 +573,49 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryModal = document.getElementById("galleryModal");
+  const gallery = document.getElementById("galleryImages");
+
+  // Only right thumbnails in projects section
+  const galleryTriggers = document.querySelectorAll('#projects .gallery-trigger');
+
+  const imageFolder = "assets/sales_analysis/";
+  const images = [
+    "viz1.png","viz2.png","viz3.png","viz4.png","viz5.png",
+    "viz6.png","viz7.png","viz8.png","viz9.png","viz10.png",
+    "viz11.png","viz12.png"
+  ];
+
+  galleryTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      // Clear previous images
+      gallery.innerHTML = "";
+
+      // Add all images to the gallery
+      images.forEach(file => {
+        const imgEl = document.createElement("img");
+        imgEl.src = imageFolder + file;
+        imgEl.className = "gallery-img";
+        imgEl.onclick = () => window.open(imgEl.src, "_blank");
+        gallery.appendChild(imgEl);
+      });
+
+      // Show modal
+      galleryModal.style.display = "flex";
+    });
+  });
+
+  // Close gallery
+  const closeBtn = galleryModal.querySelector('.close');
+  closeBtn.addEventListener('click', () => {
+    galleryModal.style.display = "none";
+  });
+});
 
 
 
   </script>
 </body>
 </html>
+
