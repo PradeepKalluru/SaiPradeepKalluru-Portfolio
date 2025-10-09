@@ -1132,7 +1132,7 @@ body.no-scroll {
 }
 .visual-thumbnail {
   width: 280px;
-  height: auto;
+  height: 285px;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -1169,7 +1169,7 @@ body.no-scroll {
   justify-content: center;
 }
 .gallery-img {
-  max-width: 300px;
+  max-width: 550px;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s;
@@ -1191,6 +1191,7 @@ body.no-scroll {
 }
 #projects {
   position: relative; /* new */
-
+  overflow: hidden;
 }
+
 
