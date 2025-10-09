@@ -114,11 +114,11 @@
             </div>
             <div class="experience-details">
                 <ul>
-                    <li>Led data-driven consulting projects for universities and colleges, analyzing SQL-based institutional data to improve rankings, accreditations (NAAC, NIRF), and strategic decision-making, enhancing institutional reputation.</li>
-                    <li>Performed ETL processes in SQL, validating and cleaning data by identifying discrepancies, missing values, and anomalies, and worked with institutions to update and refine datasets for accurate reporting in Power BI & Tableau dashboards.</li>
-                    <li>Developed 10+ dashboards tracking ranking metrics, accreditation scores, faculty performance, and financial data, enabling leadership to benchmark performance against competitors and previous years’ data.</li>
-                    <li>Conducted institutional ranking and accreditation analysis, identifying key performance indicators (KPIs) and providing data-driven recommendations to improve university competitiveness, compliance and strategic planning.</li>
-                    <li>Partnered with cross-functional stakeholders, translating complex data into executive reports and presentations to drive impactful strategic institutional initiatives.</li>
+                    <li>Led data-driven consulting initiatives for 10+ institutions, leveraging automated data analysis of large-scale institutional datasets to improve NAAC/NIRF rankings and strategic decision-making.</li>
+                    <li>Engineered and automated ETL pipelines using SQL scripting and Python for data extraction, cleaning, and validation, resolving complex data discrepancies and anomalies to ensure 99.9% data quality for reporting.</li>
+                    <li>Developed and deployed 10+ interactive dashboards through PowerBI powered by automated SQL data feeds, visualizing KPIs (e.g., faculty performance, research output) to enable real-time benchmarking and trend analysis.</li>
+                    <li>Conducted detailed accreditation and ranking analysis, utilizing Python-scripted data modeling to identify critical improvement KPIs and deliver data-backed recommendations for resource allocation and compliance.</li>
+                    <li>Collaborated with academic stakeholders, translating complex insights from automated data workflows into clear, executive-level KPI reporting and visualizations that successfully guided leadership in strategic decision-making.</li>
                 </ul>
             </div>
             <p class="technologies-used"><strong>Technologies/Tools:</strong> SQL, Power BI, Tableau, ETL, MS Excel</p>
@@ -221,24 +221,33 @@
 
     <!-- Right Side -->
     <div class="projects-right">
-      <h3>Sales Data Analysis using Python</h3>
-      <h4>Objectives:</h4>
-      <ul>
-        <li>Understand sales patterns across regions and products</li>
-        <li>Analyze customer behavior and payment preferences</li>
-        <li>Identify seasonal trends and top-performing products</li>
-      </ul>
+  <h3>Automated ETL Pipeline Project of Sales Data Analysis and Reporting using SQL, Python, and Power BI</h3>
+  
+  <h4>Automation and ETL Engineering</h4>
+  <ul>
+    <li>Architected and implemented an end-to-end ETL pipeline utilizing Python (<strong>Pandas</strong>, <strong>gspread</strong>) to automatically extract and cleanse over 250,000 live sales records from fragmented Google Sheet sources.</li>
+    <li>Engineered high-volume data loading by deploying Python’s batch loading (chunking) capabilities into a SQL Server staging table, optimizing transfer speed and preventing system overload.</li>
+    <li>Established a fully automated workflow using Windows Task Scheduler to trigger the entire Python and SQL process, eliminating all manual data extraction and reconciliation steps.</li>
+  </ul>
 
-      <h4>Key Outcomes & Insights:</h4>
-      <ul>
-        <li>Top 3 products contributed to 45% of total revenue</li>
-        <li>Peak sales occur during holiday season; certain regions lag behind</li>
-        <li>Majority of customers prefer online payments → targeted campaigns</li>
-      </ul>
+  <h4>Data Integrity and SQL Development</h4>
+  <ul>
+    <li>Developed a dedicated SQL Stored Procedure leveraging the <strong>MERGE</strong> statement to enforce data integrity by performing reliable Upserts (updating existing records and inserting new transactions) into the final reporting table.</li>
+    <li>Resolved data reliability issues and guaranteed data consistency by standardizing data types and implementing date conversions during the transformation phase, reducing historical data discrepancies.</li>
+  </ul>
+
+  <h4>Business Intelligence and Impact</h4>
+  <ul>
+    <li>Designed and deployed a dynamic, self-refreshing <strong>Power BI</strong> dashboard, linked via the On-premises Data Gateway, providing executive teams with immediate, accurate visualization of sales trends, profitability, and regional performance.</li>
+    <li>Reduced data latency, enabling near real-time decision-making and eliminating extra time per day spent on reporting.</li>
+  </ul>
+</div>
+
 
       <div class="project-links">
-        <a href="https://nbviewer.org/github/PradeepKalluru/SaiPradeepKalluru-Portfolio/blob/main/assets/sales_analysis/sales_analysis.ipynb" target="_blank" class="btn">View Jupyter Notebook</a>
-        <a href="assets\sales_analysis\case_study.pdf" target="_blank" class="btn">Read Case Study →</a>
+        <a href="D:\My Website\assets\sales_analysis\Python Automation Script.pdf" target="_blank" class="btn">View Python Script</a>
+        <a href="D:\My Website\assets\sales_analysis\SQL Automation Script.pdf" target="_blank" class="btn">View SQL Script →</a>
+        <a href="D:\My Website\assets\sales_analysis\Sales Data Automation Case Study.pdf" target="_blank" class="btn">View Case Study of the project</a>
       </div>
     </div>
   </div>
@@ -619,5 +628,6 @@ document.addEventListener("DOMContentLoaded", () => {
   </script>
 </body>
 </html>
+
 
 
