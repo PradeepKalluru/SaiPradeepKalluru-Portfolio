@@ -1169,7 +1169,7 @@ body.no-scroll {
   justify-content: center;
 }
 .gallery-img {
-  max-width: 550px;
+  max-width: 600px;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s;
